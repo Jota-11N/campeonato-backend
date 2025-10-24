@@ -24,3 +24,6 @@ exports.app.use("/api/tournaments", tournaments_routes_1.default);
 exports.app.use("/api/teams", teams_routes_1.default);
 exports.app.use("/api/players", players_routes_1.default);
 exports.app.use("/api/matches", matches_routes_1.default);
+exports.app.get("/health", (_req, res) => {
+    res.status(200).json({ ok: true });
+});

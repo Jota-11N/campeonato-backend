@@ -24,3 +24,7 @@ app.use("/api/tournaments", tournamentsRoutes);
 app.use("/api/teams", teamsRoutes);
 app.use("/api/players", playersRoutes);
 app.use("/api/matches", matchesRoutes); 
+
+app.get("/health", (_req, res) => {
+  res.status(200).json({ ok: true });
+});
