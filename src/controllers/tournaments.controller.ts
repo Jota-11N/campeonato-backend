@@ -49,10 +49,9 @@ const teamIds = rows.map(r => r.teamId);
 const teams = await prisma.team.findMany({ where: { id: { in: teamIds } } });
 const byId = new Map(teams.map(t => [t.id, t]));
 const resp = rows.map(r => ({
-teamId: r.teamId,
-teamName: byId.get(r.teamId)?.name ?? "",
-...r,
-dg: r.gf - r.gc
+  ...r, // r ya contiene teamId, pj, pg, pe, pp, gf, gc, pts
+  teamName: byId.get(r.teamId)?.name ?? "",
+  dg: r.gf - r.gc
 })).sort((x,y) => y.pts - x.pts || (y.gf - y.gc) - (x.gf - x.gc));
 
 

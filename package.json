@@ -1,1 +1,37 @@
-{"name":"campeonatos-backend","version":"1.0.0","type":"module","scripts":{"dev":"tsx watch src/server.ts","build":"tsc","start":"node dist/server.js","prisma":"prisma","migrate":"prisma migrate dev","seed":"tsx prisma/seed.ts"},"dependencies":{"@prisma/client":"^5.17.0","bcryptjs":"^2.4.3","cors":"^2.8.5","dotenv":"^16.4.5","express":"^4.19.2","jsonwebtoken":"^9.0.2","morgan":"^1.10.0","zod":"^3.23.8"},"devDependencies":{"@types/express":"^5.0.3","prisma":"^5.17.0","tsx":"^4.19.2","typescript":"^5.5.4"}}
+{
+  "name": "campeonatos-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "prisma generate && tsc",
+    "start": "node dist/server.js",
+    "prisma": "prisma",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "generate": "prisma generate",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "prisma": "^5.17.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": "18.x || 20.x || 22.x"
+  }
+}

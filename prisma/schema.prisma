@@ -27,17 +27,18 @@ enum Role {
 
 // ---------- MODELOS ---------- 
 model Team {
-  id        Int       @id @default(autoincrement())
-  name      String
-  shortName String?
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  players   PlayerTeam[]
+  id          Int       @id @default(autoincrement())
+  name        String
+  shortName   String?
+  logo        String?   // 👈 NUEVO
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  players     PlayerTeam[]
   homeMatches Match[]  @relation("HomeMatches")
   awayMatches Match[]  @relation("AwayMatches")
   tournaments TeamTournament[]
 }
-
+ 
 model Player {
   id        Int       @id @default(autoincrement())
   firstName String
